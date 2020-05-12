@@ -1,0 +1,48 @@
+.recomendations {
+    height: 280px;
+    margin-top:30px;
+    background: #FFFFFF;
+    border: 0.7px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+}
+.header{
+    padding: 10px 10px;
+}
+.header p{
+    margin: 0;
+    color: rgba(var(--f52,142,142,142),1);
+    font-weight: 600;
+}
+.info
+{
+    margin-left: 16px
+}
+.userName{
+    font-weight: 600;
+    font-size: 14px;
+}
+.aboutUser
+{
+    font-size: 12px;
+}
+.item{
+    display: block;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.subsc{
+    width: min-content;
+    float:right;
+    margin-right: 10px;
+    border: 0;
+    color: #0095f6;
+    color: rgba(var(--d69,0,149,246),1);
+    display: inline;
+    padding: 0;
+    position: relative;    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+}

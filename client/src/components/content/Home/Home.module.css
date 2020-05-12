@@ -1,0 +1,35 @@
+.middle {
+    padding-top: 30px;
+    margin: 0 calc(50% - 61%/2);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 6fr 3fr;
+    grid-template-areas:
+            "lenta navBar"
+}
+.navBar
+{
+    grid-area: navBar;
+}
+
+.lenta
+{
+    grid-area: lenta;
+}
+.story
+{
+    width: 600px;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 10px 0.8px;
+    margin-bottom: 24px;
+}
+
+.items
+{
+    width: max-content;
+    display: inline-block;
+}

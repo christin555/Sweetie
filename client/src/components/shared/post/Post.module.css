@@ -1,0 +1,157 @@
+.post {
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+    margin-bottom: 30px;  line-height: 18px;
+}
+
+.header
+{    height: 60px;
+    left: 0px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    padding: 12px 16px 12px 16px;
+}
+.more, .info, .photo
+{
+    display: inline-block;  vertical-align: middle;
+}
+.info
+{
+    margin-left: 16px
+}
+.more
+{
+    display: inline-block;
+    margin-left: calc(100% - 110px);  cursor: pointer;
+}
+.userName{
+    font-weight: 600;
+    font-size: 14px;
+}
+.location
+{
+    font-size: 12px;
+}
+.media
+{
+    width: 600px;
+}
+.media img
+{
+    object-fit: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.navBar
+{
+
+    left: 0px;
+    top: 672px;
+    padding: 10px 20px;
+}
+.likes
+{
+    padding: 0 20px;
+    height: 30px;
+    left: 18px;
+    top: 712px;
+    font-weight: 500;
+}
+.description
+{
+    padding: 0 20px;
+    left: 18px;
+    font-style: normal;
+
+    font-size: 14px;
+
+
+}
+.timeCreated{
+    padding: 0 20px;
+    color: #8e8e8e;
+    font-size: 10px;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.comment{
+    margin-top: 0;padding: 0 20px;
+}
+.short_desc, .comment{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    color: #262626;
+    margin: 0 0 5px 0 ;
+}
+.userLabel { color: black;
+    font-weight: 600;
+
+
+}
+.textField{
+    left: 0px;
+    grid-area: t;
+
+}
+.textField:focus{
+    outline:none;
+
+}
+.newComment
+{
+    color: rgba(var(--i1d,38,38,38),1);
+    margin-top: 5px;
+    border-top: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-areas:
+            "t b"
+}
+.publish_button
+{
+    grid-area: b;
+    right: 0;
+    color: rgba(56, 151, 240, 0.5);
+}
+.publish_button:hover
+{
+    cursor: pointer;
+}
+
+[placeholder]:empty::before {
+    content: attr(placeholder);
+    color: #555;
+}
+.faHeart
+{
+    color: black;
+
+}
+.item{
+    display: inline-block;
+    font-size: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.item:last-child{
+    float: right;
+    margin-right:0;
+}
+.textContent{
+    line-height: 18px;
+}
+.moreDesc{
+    margin-left: 10px;
+    color: darkgrey;
+    cursor: pointer;
+}
+.allcomments{
+    padding: 0 20px;
+    margin: 3px 0 6px 0 ;
+    color: #8e8e8e;;
+}

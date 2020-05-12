@@ -1,0 +1,27 @@
+
+
+.name
+{
+    color: rgba(var(--i1d,38,38,38),1);
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.media
+{
+    padding: 0 6px;
+}
+.item
+{   display: inline-block;
+    width: min-content;
+}
+.likes{
+    height: 30px;
+    left: 18px;
+    top: 712px;
+}

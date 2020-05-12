@@ -1,0 +1,106 @@
+.header {
+    width: 100%;
+    height: 53px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+.middle
+{
+    top: calc(50% - 53px/2);
+    padding: 10px 20px;
+    width: 61%;
+    margin: 0 calc(50% - 61%/2);
+}
+
+.logo {
+    vertical-align: middle;
+    display: inline-block;
+    width: 103px;
+    margin-right: calc(50% - 233px/2 - 103px - 20px);
+}
+.logo img
+ {
+    max-height: 100%;
+    max-width: 100%;
+}
+.search
+{
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0px 10px;
+    width: 215px;
+    height: 28px;
+    position: relative;
+    background: #FAFAFA;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.search input
+{
+    background: transparent;
+    border: none;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    outline: none;
+    padding: 6px 6px;
+    font-size: 14px;
+}
+.search input::placeholder {
+    text-align: center;
+    color: #999;
+    cursor: text;
+    font-size: 14px;
+    font-weight: 300;
+}
+.fa_search   {
+    font-size: 10px;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    float: left;
+    color: gray;
+    position: absolute;
+    font-weight: lighter;
+    left: 30%;
+}
+.icons
+{
+    vertical-align: middle;
+    margin-left: calc(50% - 233px/2 - 141.68px - 20px);
+    padding-left: 24px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    flex-direction: row;
+}
+.item {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    font-size: 24px;
+}
+.item:not(:first-child) {
+    margin-left: 30px;
+}
+.photo
+{
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 100%;
+}
+.user
+{
+    width: 24px;
+    height: 24px;
+}
