@@ -28,8 +28,8 @@ let f2 =(count)=> {
                 ({this.props.postParams.commentsCount})</p>
 
             <p className={styles.comment}>
-                <NavLink className={styles.userLabel} to="/dolge">dolcegabbana </NavLink>
-                {this.props.postParams.lastComment}
+                <NavLink className={styles.userLabel} to="/{this.props.postParams.lastComment_user}"> {this.props.postParams.last_comment_user} </NavLink>
+                {this.props.postParams.last_comment}
                 <span className={styles.moreDesc}>еще </span>
             </p>
 
@@ -44,12 +44,12 @@ let f2 =(count)=> {
         <div className={styles.post}>
 
             <Header location={this.props.postParams.location}
-                    name={this.props.postParams.name} userPhotoPath={this.props.postParams.photoPath}/>
+                    name={this.props.postParams.name} userPhotoPath={this.props.postParams.photo_path}/>
 
             <div className={styles.mediaContent}>
                 <div className={styles.media}>
                     <img alt="post" className={styles.photo}
-                         src={this.props.postParams.mediaPath}/>
+                         src={this.props.postParams.media_path}/>
                 </div>
             </div>
 
@@ -66,7 +66,7 @@ let f2 =(count)=> {
                     </div>
                 </div>
                 <div className={styles.likes}>
-                    25 000 отметок "Нравится"
+                    {this.props.postParams.likesCount} отметок "Нравится"
                 </div>
                 <div className={styles.text}>
                     <div className={styles.description}>

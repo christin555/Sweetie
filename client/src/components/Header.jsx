@@ -29,12 +29,14 @@ const Header = () => {
                 </div>
 
                 <div className={styles.item}>
+                    <NavLink to ="/notify">
                     <FontAwesomeIcon icon={faHeart} aria-hidden="true"/>
+                    </NavLink>
                 </div>
 
                 <div className={styles.item}>
                 <div className={styles.user}>
-                    <NavLink to ="/ptofile">
+                    <NavLink to ="/profile">
                    <div className={styles.item}>
                        <img alt="userPhoto" className={styles.photo} src={photo}/>
                     </div>

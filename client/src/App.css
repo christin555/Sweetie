@@ -1,3 +1,5 @@
+
+
 body{
   background: #FAFAFA;
 }
@@ -33,9 +35,32 @@ body, button, input, textarea {
 
 a{
   text-decoration: none;
+  color: black;
 }
 a:visited
 {
   text-decoration: none;
   color: black;
+}
+button{
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border: 1px solid rgba(var(--ca6,219,219,219),1);
+  color: #262626;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  min-width: 50px;
+  text-align: center;
+}
+.middle {
+  padding-top: 30px;
+  margin: 0 calc(50% - 61%/2);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 6fr 3fr;
+  grid-template-areas:
+          "lenta navBar"
 }

@@ -15,7 +15,7 @@ const Home = () => {
 
         </div>
         <div className={styles.navBar}>
-            <UserBlock style={{width: 50 + 'px',height: 50 + 'px'}}/>
+            <UserBlock  style={{width: 50 + 'px',height: 50 + 'px'}}/>
             <Recomendations/>
         </div>
     </div>

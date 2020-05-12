@@ -20,7 +20,7 @@ class Stories extends React.Component{
     }
 
     render(){
-        let StoryElements = this.props.stories.map(story =>  <UserStory userName= {story.name} photoPath={story.photoPath} key={story.id} />);
+        let StoryElements = this.props.stories.map(story =>  <UserStory userName= {story.name} photoPath={story.photo_path} key={story.id} />);
         return <div className={styles.story}>
             <div className={styles.items}>
                 {StoryElements}
