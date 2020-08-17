@@ -6,7 +6,7 @@ const UserPhoto = (props) => {
     return(
                 <div className={styles.border} style ={props.style}  >
                     <img alt="Фото профиля" className={styles.photo}
-                         src={props.path}/>
+                        src={props.path}/>
                 </div>
     )
 }

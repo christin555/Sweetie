@@ -13,7 +13,6 @@ const storyReducer = (state= initialState, action) =>{
 
             return {...state, stories: action.stories}
 
-
         default: return state;
     }
 

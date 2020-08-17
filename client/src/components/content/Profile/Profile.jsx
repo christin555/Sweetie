@@ -15,7 +15,7 @@ const Profile = () => {
     return <div className={styles.middle}>
          <div className={styles.header}>
         <div className={styles.photo}>
-            <UserPhoto  path="https://psv4.userapi.com/c848132/u103844138/docs/d5/86bab6b116ec/QCCMXSlYUY.jpg?extra=nzJ2CLnqWnKQ7gmloTfpEoxvhSaSVeoy1_mXgKJONRxsFmXvhyHr_xrI4lX0wkYvO5TDCKXYHMNkrkW0mFFdgIoLvrj5vK-zZJ2BFTFycZLMWDbTJw-kdDdgSNkbilIHUxO8tT7Om8WHHzn8VALL2j4"
+            <UserPhoto  path="https://sun9-44.userapi.com/c858028/v858028605/19f21b/8wQzNF0NSuo.jpg"
                         style={{width: 150 + 'px',height:150 + 'px'}}/>
         </div>
     <div className={styles.info}>

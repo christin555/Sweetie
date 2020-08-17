@@ -1,0 +1,67 @@
+.middle {
+    margin: 0 calc(50% - 61%/2);
+    width: calc(100% - 2*(50% - 61%/2) + 40px);
+    height: 100%;
+}
+.content{
+    width: calc(100% - 40px);
+    position: absolute;
+    height: calc(100vh - 94px);
+    padding-bottom: 20px;
+}
+.container{
+    display: grid;
+    overflow: hidden;
+    height: 100%;
+    margin: 1px;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    grid-template-rows: 60px  auto;
+    grid-template-columns: 6fr 10fr;
+    grid-template-areas:
+            "header messages"
+            "users_list messages"
+}
+.users_list
+{
+    overflow: hidden auto;
+    border-top: 1px solid #DBDBDB;
+    grid-area: users_list;
+}
+.header{
+    padding: 0 20px;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+}
+.header>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+.messages
+{
+    border-left: 1px solid #DBDBDB;
+    grid-area: messages;
+}
+
+.list{
+    flex-direction: column;
+    margin-top: 8px;
+}
+.list>div:first-child{
+    font-weight: 600;
+    font-size: 16px;
+}
+.list>div{
+    flex-direction: column;
+    padding: 4px 20px;
+    margin: 4px 0;
+}
+
+.list>div:not(:first-child):hover{
+   background: #efefef;
+    cursor: pointer;
+}

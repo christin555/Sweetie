@@ -1,0 +1,17 @@
+.info
+{
+    margin-left: 16px
+}
+.userName{
+    font-size: 14px;
+}
+.aboutUser
+{
+    font-size: 14px;
+    color: #8e8e8e;
+}
+ .info, .photo
+{
+     display: inline-block;
+     vertical-align: middle;
+}
