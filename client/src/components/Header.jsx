@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Header.module.css"
-import logo from './img/1600px-Instagram_logo.svg.png';
+import logo from '../assets/img/1600px-Instagram_logo.svg.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane,faHeart,faHome,faSearch } from '@fortawesome/free-solid-svg-icons'
-import photo from './img/tvNE7qozA0g.jpg'
+import photo from '../assets/img/tvNE7qozA0g.jpg'
 import {NavLink} from "react-router-dom";
+
 const Header = () => {
     return <div className={styles.header}>
         <div className = {styles.middle}>
@@ -39,13 +40,11 @@ const Header = () => {
                 </div>
 
                 <div className={styles.item}>
-                <div className={styles.user}>
                     <NavLink to ="/profile">
-                   <div className={styles.item}>
-                       <img alt="userPhoto" className={styles.photo} src={photo}/>
-                    </div>
-                </NavLink>
-                </div>
+                        <div className={styles.user}>
+                       <img alt="userPhoto" className={styles.user_photo} src={photo}/>
+                        </div>
+                    </NavLink>
                 </div>
 
             </div>

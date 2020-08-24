@@ -5,5 +5,7 @@ const userController = require('../controllers/user.controller');
 
 // ==> Rota responsável por criar um novo 'Product': (POST): localhost:3000/api/products
 router.post('/users', userController.createUser);
+router.post('/suggestedPeople', userController.suggestedPeople);
 router.get('/users', userController.listAllUsers);
+
 module.exports = router;

@@ -1,5 +1,5 @@
 import React from "react";
-import photo from '../../img/tvNE7qozA0g.jpg'
+import photo from '../../../assets/img/tvNE7qozA0g.jpg'
 import styles from "./Post.module.css"
 import Header from "./Header";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
