@@ -3,7 +3,6 @@ import styles from "../Profile/Profile.module.css";
 
 const Edit_profile = () => {
 
-
     return <div className={"middle"}>
         Редактирование профиля
     </div>

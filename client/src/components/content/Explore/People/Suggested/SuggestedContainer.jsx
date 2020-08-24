@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {followAC, unfollowAC, getUsersAC} from "../../../../../redux/user-reducer";
+import {followAC, unfollowAC, getUsersAC,setCurrentOffsetAC} from "../../../../../redux/user-reducer";
 import Suggested from "./Suggested";
 
 
@@ -9,6 +9,7 @@ let mapStateToProps =(state) =>{
 
     return {
         users: state.userReducer.users,
+        offset: state.userReducer.offset,
     }
 }
 let mapDispatchToProps =(dispatch) =>{
@@ -21,6 +22,9 @@ let mapDispatchToProps =(dispatch) =>{
         },
         getUsers:(users)=>{
             dispatch(getUsersAC(users));
+        },
+        setCurrentOffset:(offset)=>{
+            dispatch(setCurrentOffsetAC(offset));
         },
     }
 }

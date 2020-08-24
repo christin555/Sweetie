@@ -1,9 +1,11 @@
 const GET_USERS = 'GET_USERS';
 const UNFOLLOW = 'UNFOLLOW';
 const FOLLOW = 'FOLLOW';
+const SET_CURRENT_OFFSET = 'SET_CURRENT_OFFSET';
 
 let initialState ={
-    users: []
+    users: [],
+    offset: 0
 }
 
 const userReducer = (state= initialState, action) =>{
@@ -29,10 +31,13 @@ const userReducer = (state= initialState, action) =>{
                 })
             }
 
+        case SET_CURRENT_OFFSET:
+
+            return { ...state, offset: action.offset }
 
         case GET_USERS:
-
-            return { ...state, users: action.users.concat(state.users)}
+            let users = state.users;
+            return { ...state, users: users.concat(action.users)}
 
         default: return state;
     }
@@ -42,5 +47,5 @@ const userReducer = (state= initialState, action) =>{
 export const getUsersAC = (users) => ({type: GET_USERS, users})
 export const followAC = (userId) => ({type:FOLLOW, userId})
 export const unfollowAC = (userId) => ({type:UNFOLLOW, userId})
-
+export const setCurrentOffsetAC = (offset) => ({type:SET_CURRENT_OFFSET, offset})
 export default userReducer;
