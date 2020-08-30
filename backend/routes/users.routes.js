@@ -4,8 +4,9 @@ const userController = require('../controllers/user.controller');
 // ==> Definindo as rotas do CRUD - 'Product':
 
 // ==> Rota responsável por criar um novo 'Product': (POST): localhost:3000/api/products
-router.post('/users', userController.createUser);
-router.post('/suggestedPeople', userController.suggestedPeople);
-router.get('/users', userController.listAllUsers);
-
+router.post('/users/createUser', userController.createUser);
+router.post('/users/suggestedPeople', userController.suggestedPeople);
+router.get('/users/getAll', userController.listAllUsers);
+router.get('/users/getUser/:id', userController.getUser);
+router.get('/users/getUserPosts/:id', userController.getUserPosts);
 module.exports = router;

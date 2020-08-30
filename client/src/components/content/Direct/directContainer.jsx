@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import React from "react";
 import Direct from "./direct";
-import {getMessages, sendNewMessageCreator, updateNewMessageBodyCreator} from "../../../redux/direct-reducer";
+import {getMessages, sendNewMessage, updateNewMessageBody} from "../../../redux/direct-reducer";
 
 
 let mapStateToProps =(state) =>{
@@ -12,18 +12,10 @@ let mapStateToProps =(state) =>{
         newMessageBody: state.directReducer.newMessageBody,
     }
 }
-let mapDispatchToProps =(dispatch) =>{
-    return {
-        getPosts:(messages)=>{
-            dispatch(getMessages(messages));
-        },
-        updateNewMessageBody:(body)=>{
-            dispatch(updateNewMessageBodyCreator(body));
-        },
-        sendNewMessage:()=>{
-            dispatch(sendNewMessageCreator());
-        }
-    }
+let mapDispatchToProps = {
+    getMessages,
+    updateNewMessageBody,
+    sendNewMessage,
 }
 
 

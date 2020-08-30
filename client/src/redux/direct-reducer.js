@@ -47,7 +47,7 @@ const directReducer = (state = initialState, action) => {
     }
 
 }
-export const updateNewMessageBodyCreator = (body) => ({type:UPDATE_NEW_MESSAGE_BODY, body: body})
-export const sendNewMessageCreator = () => ({type:SEND_MESSAGE})
+export const updateNewMessageBody = (body) => ({type:UPDATE_NEW_MESSAGE_BODY, body: body})
+export const sendNewMessage = () => ({type:SEND_MESSAGE})
 export const getMessages = (messages) => ({type:GET_MESSAGES,messages: messages})
 export default directReducer;

@@ -4,72 +4,75 @@ import UserPhoto from "../../shared/userPhoto/UserPhoto";
 import Post from "../../shared/post/Post";
 import {NavLink} from "react-router-dom";
 import { useHistory } from "react-router-dom";
-const Profile = () => {
 
+const Profile = (props) => {
+
+    console.log(props);
     const history = useHistory();
-    let toEdit =  () =>{
+    let toEdit =  () => {
         let path = `/edit_profile`;
         history.push(path);
     }
 
-    return <div className={styles.middle}>
-         <div className={styles.header}>
-        <div className={styles.photo}>
-            <UserPhoto  path="https://sun9-44.userapi.com/c858028/v858028605/19f21b/8wQzNF0NSuo.jpg"
+    const Posts = props.posts.length !=0 ? props.posts.map(el => {
+        return(
+            <div className={styles.image} >
+                <img src={el.media_path} alt="profile Pic"/>
+            </div>
+        )
+    }):null;
+
+    return (
+        <div className={styles.middle}>
+
+            <div className={styles.header}>
+
+                <div className={styles.photo}>
+                    <UserPhoto
+                        path={props.user.user.photo_path}
                         style={{width: 150 + 'px',height:150 + 'px'}}/>
-        </div>
-    <div className={styles.info}>
-        <div className={styles.item}>
-            <span className={styles.user_name}>   yudina.ti </span>  <button onClick={toEdit} className={styles.light}> Редактировать профиль </button>
-        </div>
-        <div className={styles.item}>
-            <div className={styles.info_count}> <b> 38 </b>  публикаций </div>
-            <div className={styles.info_count}> <b> 337 </b>  подписчиков </div>
-            <div className={styles.info_count}> <b> 221 </b>  подписок </div>
-        </div>
-        <div className={styles.item}>
-          <span className={styles.h1}> CHRIS🔸TINA </span>
-           <br/>
-           <a href={'vk.com/phoenix_ti'}> vk.com/phoenix_ti </a>
-        </div>
-    </div>
-    </div>
-        <div className={styles.tabs}>
-            <div className={[styles.tab+" "+styles.activeTab]}>
-                ПУБЛИКАЦИИ
+                </div>
+
+                <div className={styles.info}>
+
+                    <div className={styles.item}>
+                        <span className={styles.user_name}>  {props.user.user.name} </span>
+                        <button onClick={toEdit} className={styles.light}> Редактировать профиль </button>
+                    </div>
+
+                    <div className={styles.item}>
+                        <div className={styles.info_count}> <b>  {props.user.countPosts} </b>  публикаций </div>
+                        <div className={styles.info_count}> <b>  {props.user.countSubscribers}  </b>  подписчиков </div>
+                        <div className={styles.info_count}> <b>  {props.user.countSubscriptions}  </b>  подписок </div>
+                    </div>
+
+                    <div className={styles.item}>
+                        <span className={styles.h1}> {props.user.user.about_user} </span>
+                        <br/>
+                        {props.user.web_site && <a href={props.user.user.web_site}> {props.user.web_site}</a>}
+                    </div>
+
+                </div>
             </div>
-            <div className={styles.tab}>
-                СОХРАНЕННОЕ
+
+            <div className={styles.tabs}>
+                <div className={[styles.tab+" "+styles.activeTab]}>
+                    ПУБЛИКАЦИИ
+                </div>
+                <div className={styles.tab}>
+                    СОХРАНЕННОЕ
+                </div>
+                <div className={styles.tab}>
+                    ОТМЕТКИ
+                </div>
             </div>
-            <div className={styles.tab}>
-                ОТМЕТКИ
+
+            <div className={styles.posts}>
+                {Posts}
             </div>
 
         </div>
-        <div className={styles.posts}>
-           <div className={styles.image} >
-               <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-           </div>
-            <div className={styles.image} >
-                <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-            </div>
-            <div className={styles.image} >
-                <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-            </div>
-            <div className={styles.image} >
-                <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-            </div>
-
-            <div className={styles.image} >
-                <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-            </div>
-            <div className={styles.image} >
-                <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-            </div>
-            <div className={styles.image} >
-                <img src="http://bubble.loc/images/uploads/media_objects/1589226452_object_2.png" alt="profile Pic"/>
-            </div>
-        </div>
-    </div>
+    );
 }
+
 export default Profile;

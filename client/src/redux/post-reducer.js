@@ -1,9 +1,7 @@
 const GET_POSTS = 'GET_POSTS';
 
 let initialState ={
-    posts: [
-
-    ]
+    posts: []
 }
 
 const postReducer = (state= initialState, action) =>{

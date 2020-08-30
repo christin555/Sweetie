@@ -35,3 +35,37 @@ exports.listAllUsers = async (req, res) => {
     const response = await db.query('SELECT * FROM users ORDER BY name ASC');
     res.status(200).send(response.rows);
 };
+
+exports.getUser = async (req, res) => {
+
+    const userId = parseInt(req.params.id);
+    const response = {};
+
+
+    const user = await db.query('SELECT * FROM users where id = $1', [userId]);
+    const countPosts = await db.query('SELECT count(*) FROM posts left join users on "users"."id" = "posts"."user_id" where "users"."id" = $1 and "users"."deleted_at" is null and  "posts"."deleted_at" is null', [userId]);
+    const countSubscribers= await db.query('SELECT count(*) FROM subscriptions left join users on "users"."id" = "subscriptions"."subscriber_id" where "subscriptions"."subscription_id" = $1 and "users"."deleted_at" is null', [userId]);
+    const countSubscriptions= await db.query('SELECT count(*) FROM subscriptions left join users on "users"."id" = "subscriptions"."subscription_id" where "subscriptions"."subscriber_id" = $1 and "users"."deleted_at" is null', [userId]);
+
+    response.user = user.rows[0];
+    response.countPosts = countPosts.rows[0].count;
+    response.countSubscribers = countSubscribers.rows[0].count;
+    response.countSubscriptions = countSubscriptions.rows[0].count;
+
+    console.log(response);
+    res.status(200).send(response);
+};
+
+exports.getUserPosts = async (req, res) => {
+
+    const userId = parseInt(req.params.id);
+    const limit = req.body.limit ? parseInt(req.body.limit) : 20;
+    const offset = req.body.offset ? parseInt(req.body.offset) : 0;
+    const response = {} ;
+    const posts = await db.query('SELECT * FROM posts where user_id = $1 and deleted_at is null limit $2 offset $3', [userId,limit,offset]);
+
+    response.posts = posts.rows;
+
+    console.log(response);
+    res.status(200).send(response);
+};

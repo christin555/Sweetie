@@ -9,12 +9,8 @@ let mapStateToProps =(state) =>{
         posts: state.postReducer.posts
     }
 }
-let mapDispatchToProps =(dispatch) =>{
-    return {
-        getPosts:(posts)=>{
-            dispatch(getPosts(posts));
-        }
-    }
+let mapDispatchToProps ={
+    getPosts,
 }
 
 
