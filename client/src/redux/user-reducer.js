@@ -9,6 +9,14 @@ const SET_USER_POSTS = 'SET_USER_POSTS';
 let initialState ={
     users: [],
     user: [],
+    currentUser: {
+        id: 1,
+        name: "tina",
+        email: "kriska_555@mail.ru",
+        photo_path: "https://sun3-10.userapi.com/c836539/v836539989/768bb/tvNE7qozA0g.jpg",
+        about_user: "C H R I S T I N A",
+        web_site: "https://vk.com/phoenix_ti"
+    },
     posts: [],
     offset: 0,
     isFetching: true,
@@ -18,7 +26,7 @@ const userReducer = (state= initialState, action) =>{
     switch(action.type)
     {
         case FOLLOW:
-            console.log(1);
+
             return {...state,
                 users: state.users. map( user => {
                     if(user.id ===  action.userId)
@@ -53,8 +61,7 @@ const userReducer = (state= initialState, action) =>{
             return { ...state, user: action.user}
 
         case SET_USER_POSTS:
-            let posts = state.posts;
-            return { ...state,  posts: posts.concat(action.posts)}
+            return { ...state,  posts: action.posts}
 
         default: return state;
     }

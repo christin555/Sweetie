@@ -4,36 +4,35 @@ import axios from "axios";
 import Loader from "../../shared/loader/Loader";
 import Profile from "./Profile";
 import {setUser, setUserPosts, toogleIsFetching} from "../../../redux/user-reducer";
+import {withRouter} from "react-router-dom";
+
 
 class ProfileContainer extends React.Component{
 
     componentDidMount() {
-
+        let userName = this.props.match.params.userName;
+        let userId;
         this.props.toogleIsFetching(true);
-        axios.get("http://localhost:3001/api/users/getUser/"+1)
+        axios.get("http://localhost:3001/api/users/getUser/"+userName)
             .then(res => {
                 this.props.setUser(res.data);
-                this.props.toogleIsFetching(false);
+                userId = res.data.user.id;
+
+                axios.get("http://localhost:3001/api/users/getUserPosts/"+userId)
+                    .then(res => {
+                        this.props.setUserPosts(res.data.posts);
+                        this.props.toogleIsFetching(false);
+
+                        console.log("error in request", res.data.posts);
+                    })
+                    .catch(err => {
+                        console.log("error in request", err);
+                    });
+
             })
             .catch(err => {
                 console.log("error in request", err);
             });
-
-
-        axios.get("http://localhost:3001/api/users/getUserPosts/"+1)
-            .then(res => {
-                this.props.setUserPosts(res.data.posts);
-                this.props.toogleIsFetching(false);
-            })
-            .catch(err => {
-                console.log("error in request", err);
-            });
-    }
-
-
-    morePosts = () => {
-       // let limit = 5;
-       // let new_offset = this.props.offset == 0  ? 15 : this.props.offset+limit ;
 
     }
 
@@ -68,4 +67,6 @@ let mapDispatchToProps ={
     toogleIsFetching,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (ProfileContainer);
+let WithRout = withRouter(ProfileContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps) (WithRout);

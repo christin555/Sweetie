@@ -21,7 +21,10 @@ const Direct = (props) => {
     if(props.page == "start")  ElementPage = <StartPage/>
     else ElementPage = <Dialog data = {props}/>;
 
-    let UserElements = props.users.map(el=><UserList key={el.id} id={el.id}></UserList>);
+    let UserElements = props.users.map(el=> <UserList
+        key={el.id}
+        id={el.id}>
+    </UserList>);
 
     return(
         <div className={styles.content}>

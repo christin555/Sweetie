@@ -21,7 +21,7 @@ class SuggestedСontainer extends React.Component{
             limit: 15
         };
         this.props.toogleIsFetching(true);
-        axios.post("http://localhost:3001/api/suggestedPeople/", i )
+        axios.post("http://localhost:3001/api/users/suggestedPeople/", i )
             .then(res => {
                 this.props.getUsers(res.data.user_list);
                 this.props.toogleIsFetching(false);
@@ -42,7 +42,7 @@ class SuggestedСontainer extends React.Component{
             limit: limit
         };
         this.props.toogleIsFetching(true);
-        axios.post("http://localhost:3001/api/suggestedPeople/", i )
+        axios.post("http://localhost:3001/api/users/suggestedPeople/", i )
             .then(res => {
                 this.props.getUsers(res.data.user_list);
                 this.props.toogleIsFetching(false);
@@ -56,12 +56,12 @@ class SuggestedСontainer extends React.Component{
         return(
             <>
                 {this.props.isFetching && <Loader/> }
-            <Suggested
-            users = {this.props.users}
-            moreUsers = {this.moreUsers}
-            unfollow = {this.props.unfollow}
-            follow = {this.props.follow}
-            />
+                <Suggested
+                    users = {this.props.users}
+                    moreUsers = {this.moreUsers}
+                    unfollow = {this.props.unfollow}
+                    follow = {this.props.follow}
+                />
             </>
         );
     }

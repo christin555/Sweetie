@@ -10,7 +10,8 @@ const UserStory = (props) => {
                 <UserPhoto path ={props.photoPath} style={{width: 58 + 'px',height: 56 + 'px'}} />
 
                 <div className={styles.name}>
-                    {props.userName}
+                    {props.userName.length > 10 ? props.userName.slice(0, 10) + "..."  : props.userName  }
+
                 </div>
 
             </div>

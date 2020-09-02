@@ -41,7 +41,7 @@ const Dialog = (props) => {
         <div className={styles.dialog}>
           <div className={styles.header}>
               <div className={styles.photo}>
-                  <UserPhoto  path="https://spb.zvetnoe.ru/upload/catalog/2019/12/KH0371.jpg"
+                  <UserPhoto  path="https://scontent-arn2-2.cdninstagram.com/v/t51.2885-19/s320x320/92947573_643213832923295_6697731340374114304_n.jpg?_nc_ht=scontent-arn2-2.cdninstagram.com&_nc_ohc=asLO_0GkiUgAX_F29Ty&oh=627694457409df0f576f99d59740afe6&oe=5F7898AD"
                               style={{width: 24 + 'px',height: 24 + 'px'}}/>
               </div>
               <div className={styles.info}>

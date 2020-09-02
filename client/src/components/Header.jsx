@@ -3,10 +3,10 @@ import styles from "./Header.module.css"
 import logo from '../assets/img/1600px-Instagram_logo.svg.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane,faHeart,faHome,faSearch } from '@fortawesome/free-solid-svg-icons'
-import photo from '../assets/img/tvNE7qozA0g.jpg'
+
 import {NavLink} from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
     return <div className={styles.header}>
         <div className = {styles.middle}>
 
@@ -40,9 +40,9 @@ const Header = () => {
                 </div>
 
                 <div className={styles.item}>
-                    <NavLink to ="/profile">
+                    <NavLink to ={"/"+props.currentUser.name+"/"}>
                         <div className={styles.user}>
-                       <img alt="userPhoto" className={styles.user_photo} src={photo}/>
+                       <img alt="userPhoto" className={styles.user_photo} src={props.currentUser.photo_path}/>
                         </div>
                     </NavLink>
                 </div>

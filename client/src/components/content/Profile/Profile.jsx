@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 const Profile = (props) => {
 
-    console.log(props);
+
     const history = useHistory();
     let toEdit =  () => {
         let path = `/edit_profile`;

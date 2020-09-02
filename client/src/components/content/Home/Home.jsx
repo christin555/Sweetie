@@ -5,7 +5,7 @@ import PostsContainer from "./PostsContainer";
 import Recomendations from "../../shared/recomendations/Recomendations";
 import UserBlock from "../../shared/UserBlock/UserBlock";
 
-const Home = () => {
+const Home = (props) => {
 
     return <div className={styles.middle}>
 
@@ -15,8 +15,8 @@ const Home = () => {
 
         </div>
         <div className={styles.navBar}>
-            <UserBlock  style={{width: 50 + 'px',height: 50 + 'px'}}/>
-            <Recomendations/>
+            <UserBlock  {...props.currentUser} style={{width: 50 + 'px',height: 50 + 'px'}}/>
+            <Recomendations users = {props.users} />
         </div>
     </div>
 }

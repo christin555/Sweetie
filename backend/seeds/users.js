@@ -1,13 +1,16 @@
 var faker = require('faker');
 
+let myRecord = (knex, id) => {
+    return knex('users').insert({
+        id: 1,
+        name: "tina",
+        email: "kriska_555@mail.ru",
+        photo_path: "https://sun3-10.userapi.com/c836539/v836539989/768bb/tvNE7qozA0g.jpg",
+        about_user: "C H R I S T I N A",
+        web_site: "https://vk.com/phoenix_ti"
+    })
+}
 
-
-let photos = [
-    "https://sun3-10.userapi.com/c836539/v836539989/768bb/tvNE7qozA0g.jpg",
-    "https://sun9-29.userapi.com/c853428/v853428686/1e5e25/yZOhbGE3VGs.jpg",
-    "https://goarctic.ru/upload/iblock/444/4445f76ff7261804dfc52f8531daa7a4.jpg",
-
-];
 let createRecord = (knex, id) => {
     return knex('users').insert({
         id,
@@ -24,9 +27,12 @@ let createRecord = (knex, id) => {
 exports.seed = function(knex) {
     return knex('users').del()
         .then( () => {
+
             let records = [];
 
-            for (let i = 1; i < 100; i++) {
+            records.push(myRecord(knex));
+
+            for (let i = 2; i < 100; i++) {
                 records.push(createRecord(knex, i))
             };
 

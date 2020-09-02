@@ -3,16 +3,24 @@ import styles from "./Post.module.css"
 import UserPhoto from "../userPhoto/UserPhoto";
 import {faEllipsisH} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {NavLink} from "react-router-dom";
+
 const Header = (props) => {
     return(
         <div className={styles.header}>
             <div className={styles.photo}>
-                <UserPhoto  path={props.userPhotoPath} style={{width: 35 + 'px',height: 34 + 'px'}}/>
+                <NavLink to ={"/"+props.name} >
+                    <UserPhoto  path={props.userPhotoPath} style={{width: 35 + 'px',height: 34 + 'px'}}/>
+                </NavLink>
             </div>
             <div className={styles.info}>
+
+                <NavLink to ={"/"+props.name} >
                 <div className={styles.userName}>
                     {props.name}
-            </div>
+                </div>
+                </NavLink>
+
                 <div className={styles.location}>
                     {props.location}
             </div>

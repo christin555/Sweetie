@@ -43,8 +43,12 @@ let f2 =(count)=> {
     return (
         <div className={styles.post}>
 
-            <Header location={this.props.postParams.location}
-                    name={this.props.postParams.name} userPhotoPath={this.props.postParams.photo_path}/>
+            <Header
+                location={this.props.postParams.location}
+                name={this.props.postParams.name}
+                userPhotoPath={this.props.postParams.photo_path}
+
+            />
 
             <div className={styles.mediaContent}>
                 <div className={styles.media}>

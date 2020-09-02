@@ -4,33 +4,27 @@ import UserBlock from "../UserBlock/UserBlock";
 import {NavLink} from "react-router-dom";
 
 
-const Recomendations = () => {
-    return <div className={styles.recomendations}>
-<div className={styles.header}>
-<p>Рекомендации для вас
-    <span className={styles.all}>
-      <NavLink to ="/explore/people/suggested">
-          Все
-      </NavLink>
-    </span></p>
+const Recomendations = (props) => {
 
-</div>
-        <div className={styles.item}>  <p className={styles.subsc}> Подписаться </p>
-            <UserBlock style={{width: 35 + 'px',height: 34 + 'px'}}/>
-        </div>
-        <div className={styles.item}>  <p className={styles.subsc}> Подписаться </p>
-            <UserBlock style={{width: 35 + 'px',height: 34 + 'px'}}/>
-        </div>
-        <div className={styles.item}>  <p className={styles.subsc}> Подписаться </p>
-            <UserBlock style={{width: 35 + 'px',height: 34 + 'px'}}/>
-        </div>
-        <div className={styles.item}>  <p className={styles.subsc}> Подписаться </p>
-            <UserBlock style={{width: 35 + 'px',height: 34 + 'px'}}/>
-        </div>
-        <div className={styles.item}>  <p className={styles.subsc}> Подписаться </p>
-            <UserBlock style={{width: 35 + 'px',height: 34 + 'px'}}/>
-        </div>
+    let userRec = props.users.map( user =>{
+        return (
+            <div className={styles.item}>  <p className={styles.subsc}> Подписаться </p>
+                <UserBlock {...user} style={{width: 35 + 'px',height: 34 + 'px'}}/>
+            </div>
+        );
+    })
+    return (
+        <div className={styles.recomendations}>
+            <div className={styles.header}>
+                <p>Рекомендации для вас
+                    <span className={styles.all}>
+                        <NavLink to ="/explore/people/suggested"> Все </NavLink>
+                    </span>
+                </p>
+            </div>
+            {userRec}
 
-    </div>
+        </div>
+    );
 }
 export default Recomendations;
