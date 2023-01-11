@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "express-promise-router": "^3.0.3",
     "faker": "^5.0.0",
-    "knex": "^0.21.5",
+    "knex": "^2.4.0",
     "knex-migrate": "^1.7.4",
     "pg": "^8.0.3",
     "pg-promise": "^10.5.2",
